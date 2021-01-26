@@ -1,0 +1,14 @@
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: service_tx_group
+  enable-auto-data-source-proxy: false
+  service:
+    vgroupMapping:
+      service_tx_group: seata-server
+  # 服务发现 建立连接
+  registry:
+    type: consul
+    consul:
+      cluster: seata-server
+      server-addr: 10.180.4.204:31050

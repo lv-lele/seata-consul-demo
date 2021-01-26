@@ -1,0 +1,25 @@
+server:
+  port: 9991
+spring:
+  application:
+    name: demo-service-A
+  cloud:
+    consul:
+      host: xxxxxxxx
+      port: 31050
+      enabled: true
+      discovery:
+        enabled: true
+        scheme: http
+        service-name: ${spring.application.name}
+        prefer-ip-address: false
+        health-check-tls-skip-verify: true
+        health-check-critical-timeout: 60s
+        instanceId: ${spring.application.name}-${server.port}-${random.int}
+        register-health-check: true
+feign:
+  client:
+    config:
+      default:
+        connect-timeout: 10000
+        read-timeout: 300000
