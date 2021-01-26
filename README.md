@@ -1,5 +1,7 @@
 # seata-consul-demo
-docker 部署脚本
+
+docker 部署 seata-server (TC)
+
 docker run --name seata-server \
             -p 8091:8091 \
             -v /root/seata/config:/root/seata-config \
