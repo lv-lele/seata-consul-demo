@@ -11,4 +11,4 @@ seata:
     type: consul
     consul:
       cluster: seata-server
-      server-addr: 10.180.4.204:31050
+      server-addr: 10.180.x.xxx:8500
